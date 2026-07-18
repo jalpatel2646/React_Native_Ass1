@@ -4,7 +4,7 @@ import * as Contacts from 'expo-contacts';
 import * as Clipboard from 'expo-clipboard';
 
 export default function ContactsScreen() {
-  const [contacts, setContacts] = useState<Contacts.Contact[]>([]);
+  const [contacts, setContacts] = useState([]);
   const [search, setSearch] = useState('');
   const [refreshing, setRefreshing] = useState(false);
   const [permissionGranted, setPermissionGranted] = useState(false);
@@ -35,7 +35,7 @@ export default function ContactsScreen() {
     setRefreshing(false);
   };
 
-  const copyToClipboard = async (number: string) => {
+  const copyToClipboard = async (number) => {
     await Clipboard.setStringAsync(number);
     Alert.alert('Success', 'Contact number copied to clipboard!');
   };
@@ -55,7 +55,7 @@ export default function ContactsScreen() {
     c.name?.toLowerCase().includes(search.toLowerCase())
   );
 
-  const renderItem = ({ item }: { item: Contacts.Contact }) => {
+  const renderItem = ({ item }) => {
     const initial = item.name ? item.name.charAt(0).toUpperCase() : '?';
     const number = item.phoneNumbers && item.phoneNumbers.length > 0 
       ? item.phoneNumbers[0].number 

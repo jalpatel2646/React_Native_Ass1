@@ -7,7 +7,7 @@ export default function SurveyPreviewScreen() {
 
   const handleSubmit = () => {
     Alert.alert('Success', 'Survey submitted successfully!', [
-      { text: 'OK', onPress: () => (router as any).replace('/history') }
+      { text: 'OK', onPress: () => router.replace('/history') }
     ]);
   };
 

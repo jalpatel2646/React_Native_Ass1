@@ -21,16 +21,16 @@ export default function Dashboard() {
 
       <Text style={styles.sectionTitle}>Quick Actions</Text>
       <View style={styles.quickActions}>
-        <Pressable style={styles.actionCard} onPress={() => (router as any).push('/new-survey')}>
+        <Pressable style={styles.actionCard} onPress={() => router.push('/new-survey')}>
           <Text style={styles.actionText}>New Survey</Text>
         </Pressable>
-        <Pressable style={styles.actionCard} onPress={() => (router as any).push('/camera')}>
+        <Pressable style={styles.actionCard} onPress={() => router.push('/camera')}>
           <Text style={styles.actionText}>Camera</Text>
         </Pressable>
-        <Pressable style={styles.actionCard} onPress={() => (router as any).push('/location')}>
+        <Pressable style={styles.actionCard} onPress={() => router.push('/location')}>
           <Text style={styles.actionText}>Location</Text>
         </Pressable>
-        <Pressable style={styles.actionCard} onPress={() => (router as any).push('/clipboard')}>
+        <Pressable style={styles.actionCard} onPress={() => router.push('/clipboard')}>
           <Text style={styles.actionText}>Clipboard</Text>
         </Pressable>
       </View>

@@ -12,7 +12,7 @@ export default function History() {
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('All');
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id) => {
     Alert.alert('Delete Survey', 'Are you sure you want to delete this survey?', [
       { text: 'Cancel', style: 'cancel' },
       { text: 'Delete', style: 'destructive', onPress: () => setData(data.filter(d => d.id !== id)) }
@@ -26,7 +26,7 @@ export default function History() {
     return matchesSearch && matchesFilter;
   });
 
-  const renderItem = ({ item }: any) => (
+  const renderItem = ({ item }) => (
     <View style={styles.card}>
       <View style={styles.cardInfo}>
         <Text style={styles.siteText}>{item.site}</Text>

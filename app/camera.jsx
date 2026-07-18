@@ -3,11 +3,11 @@ import { View, Text, StyleSheet, Pressable, Alert, Image, ActivityIndicator } fr
 import { Camera, CameraView } from 'expo-camera';
 
 export default function CameraScreen() {
-  const [hasPermission, setHasPermission] = useState<boolean | null>(null);
-  const [photo, setPhoto] = useState<any>(null);
-  const [captureTime, setCaptureTime] = useState<string | null>(null);
+  const [hasPermission, setHasPermission] = useState(null);
+  const [photo, setPhoto] = useState(null);
+  const [captureTime, setCaptureTime] = useState(null);
   const [isCameraReady, setIsCameraReady] = useState(false);
-  const cameraRef = useRef<any>(null);
+  const cameraRef = useRef(null);
 
   useEffect(() => {
     (async () => {

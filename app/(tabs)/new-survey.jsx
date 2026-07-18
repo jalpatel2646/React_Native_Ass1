@@ -16,7 +16,7 @@ export default function NewSurvey() {
       return;
     }
     // Success, proceed to preview or save
-    (router as any).push('/preview');
+    router.push('/preview');
   };
 
   return (

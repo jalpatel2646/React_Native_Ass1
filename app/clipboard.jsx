@@ -6,7 +6,7 @@ export default function ClipboardScreen() {
   const [pastedText, setPastedText] = useState('');
   const [notes, setNotes] = useState('');
 
-  const copyToClipboard = async (text: string, label: string) => {
+  const copyToClipboard = async (text, label) => {
     await Clipboard.setStringAsync(text);
     Alert.alert('Copied', `${label} copied to clipboard!`);
   };

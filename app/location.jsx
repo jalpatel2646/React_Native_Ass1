@@ -4,8 +4,8 @@ import * as Location from 'expo-location';
 import * as Clipboard from 'expo-clipboard';
 
 export default function LocationScreen() {
-  const [location, setLocation] = useState<Location.LocationObject | null>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const fetchLocation = async () => {

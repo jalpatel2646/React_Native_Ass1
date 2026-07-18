@@ -8,10 +8,10 @@ export default function SurveyHubScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Survey Management</Text>
-      <Pressable style={styles.btn} onPress={() => (router as any).push('/new-survey')}>
+      <Pressable style={styles.btn} onPress={() => router.push('/new-survey')}>
         <Text style={styles.btnText}>Create New Survey</Text>
       </Pressable>
-      <Pressable style={[styles.btn, styles.btnSecondary]} onPress={() => (router as any).push('/history')}>
+      <Pressable style={[styles.btn, styles.btnSecondary]} onPress={() => router.push('/history')}>
         <Text style={styles.btnText}>View Survey History</Text>
       </Pressable>
     </View>
