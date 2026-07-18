@@ -1,0 +1,31 @@
+app/(tabs)/index.tsx(22,73): error TS2345: Argument of type '"/new-survey"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/(tabs)/index.tsx(25,73): error TS2345: Argument of type '"/camera"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/(tabs)/index.tsx(28,73): error TS2345: Argument of type '"/location"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/(tabs)/index.tsx(31,73): error TS2345: Argument of type '"/clipboard"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/(tabs)/new-survey.tsx(19,17): error TS2345: Argument of type '"/preview"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/contacts.tsx(100,40): error TS2339: Property 'id' does not exist on type 'Contact'.
+app/preview.tsx(10,51): error TS2345: Argument of type '"/history"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/survey.tsx(11,64): error TS2345: Argument of type '"/new-survey"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+app/survey.tsx(14,87): error TS2345: Argument of type '"/history"' is not assignable to parameter of type 'RelativePathString | ExternalPathString | "/explore" | `/explore?${string}` | `/explore#${string}` | "/" | `/?${string}` | `/#${string}` | "/_sitemap" | `/_sitemap?${string}` | `/_sitemap#${string}` | ... 4 more ... | { ...; }'.
+src/app/_layout.tsx(1,10): error TS2305: Module '"expo-router"' has no exported member 'DarkTheme'.
+src/app/_layout.tsx(1,21): error TS2305: Module '"expo-router"' has no exported member 'DefaultTheme'.
+src/app/_layout.tsx(1,35): error TS2305: Module '"expo-router"' has no exported member 'ThemeProvider'.
+src/app/explore.tsx(53,19): error TS2322: Type '{ ios: string; android: string; web: string; }' is not assignable to type 'SFSymbols7_0'.
+src/components/animated-icon.tsx(142,5): error TS2698: Spread types may only be created from object types.
+src/components/app-tabs.tsx(8,25): error TS2367: This comparison appears to be unintentional because the types 'ColorSchemeName' and '"unspecified"' have no overlap.
+src/components/app-tabs.tsx(8,25): error TS2538: Type 'null' cannot be used as an index type.
+src/components/app-tabs.tsx(8,25): error TS2538: Type 'undefined' cannot be used as an index type.
+src/components/app-tabs.tsx(16,29): error TS2339: Property 'Label' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.tsx(16,60): error TS2339: Property 'Label' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.tsx(17,29): error TS2339: Property 'Icon' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.tsx(24,29): error TS2339: Property 'Label' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.tsx(24,63): error TS2339: Property 'Label' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.tsx(25,29): error TS2339: Property 'Icon' does not exist on type '((props: NativeTabTriggerProps) => null) & { TabBar: (props: NativeTabsTriggerTabBarProps) => ReactNode; }'.
+src/components/app-tabs.web.tsx(52,25): error TS2367: This comparison appears to be unintentional because the types 'ColorSchemeName' and '"unspecified"' have no overlap.
+src/components/app-tabs.web.tsx(52,25): error TS2538: Type 'null' cannot be used as an index type.
+src/components/app-tabs.web.tsx(52,25): error TS2538: Type 'undefined' cannot be used as an index type.
+src/components/app-tabs.web.tsx(68,15): error TS2322: Type '{ ios: string; web: string; }' is not assignable to type 'SFSymbols7_0'.
+src/components/ui/collapsible.tsx(22,13): error TS2322: Type '{ ios: string; android: string; web: string; }' is not assignable to type 'SFSymbols7_0'.
+src/hooks/use-theme.ts(11,17): error TS2367: This comparison appears to be unintentional because the types 'ColorSchemeName' and '"unspecified"' have no overlap.
+src/hooks/use-theme.ts(13,17): error TS2538: Type 'null' cannot be used as an index type.
+src/hooks/use-theme.ts(13,17): error TS2538: Type 'undefined' cannot be used as an index type.
