@@ -46,8 +46,8 @@ export default function ClipboardScreen() {
           style={styles.copyCard} 
           onPress={() => copyToClipboard('SURV-1784450742369', 'Survey ID')}
         >
-          <View style={[styles.iconBox, { backgroundColor: '#F0EEFE' }]}>
-            <Feather name="file-text" size={20} color="#5C4DE6" />
+          <View style={[styles.iconBox, { backgroundColor: '#EFEBE9' }]}>
+            <Feather name="file-text" size={20} color="#5D4037" />
           </View>
           <View style={styles.cardTextContainer}>
              <Text style={styles.cardTitle}>Copy Latest Survey ID</Text>
@@ -102,7 +102,7 @@ export default function ClipboardScreen() {
                <Text style={styles.pasteBtnText}>Paste</Text>
              </Pressable>
              <Pressable style={styles.saveBtn} onPress={() => { Alert.alert('Saved', 'Draft temporarily saved'); }}>
-               <Feather name="save" size={16} color="#5C4DE6" />
+               <Feather name="save" size={16} color="#5D4037" />
                <Text style={styles.saveBtnText}>Save to Draft</Text>
              </Pressable>
           </View>
@@ -259,12 +259,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#5C4DE6',
+    borderColor: '#5D4037',
     paddingVertical: 12,
     marginLeft: 8,
   },
   saveBtnText: {
-    color: '#5C4DE6',
+    color: '#5D4037',
     fontWeight: '700',
     fontSize: 14,
     marginLeft: 6,

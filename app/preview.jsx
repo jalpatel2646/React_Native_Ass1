@@ -92,7 +92,7 @@ export default function SurveyPreviewScreen() {
         {/* Card 1: Site Details */}
         <View style={styles.card}>
            <View style={styles.cardHeader}>
-              <Feather name="box" size={18} color="#5C4DE6" />
+              <Feather name="box" size={18} color="#5D4037" />
               <Text style={styles.cardTitle}>Site Details</Text>
            </View>
            <View style={styles.row}>
@@ -112,7 +112,7 @@ export default function SurveyPreviewScreen() {
         {/* Card 2: Site Photo */}
         <View style={styles.card}>
            <View style={styles.cardHeader}>
-              <Feather name="camera" size={18} color="#5C4DE6" />
+              <Feather name="camera" size={18} color="#5D4037" />
               <Text style={styles.cardTitle}>Site Photo</Text>
            </View>
            <View style={styles.imageWrapper}>
@@ -130,7 +130,7 @@ export default function SurveyPreviewScreen() {
         {/* Card 3: Location Markers */}
         <View style={styles.card}>
            <View style={styles.cardHeader}>
-              <Feather name="map-pin" size={18} color="#5C4DE6" />
+              <Feather name="map-pin" size={18} color="#5D4037" />
               <Text style={styles.cardTitle}>Location Markers</Text>
            </View>
            <View style={styles.row}>
@@ -183,7 +183,7 @@ export default function SurveyPreviewScreen() {
         {/* Card 4: Contact Details */}
         <View style={styles.card}>
            <View style={styles.cardHeader}>
-              <Feather name="users" size={18} color="#5C4DE6" />
+              <Feather name="users" size={18} color="#5D4037" />
               <Text style={styles.cardTitle}>Contact Details</Text>
            </View>
            <View style={styles.row}>
@@ -199,7 +199,7 @@ export default function SurveyPreviewScreen() {
         {/* Card 5: Notes */}
         <View style={styles.card}>
            <View style={styles.cardHeader}>
-              <Feather name="file-text" size={18} color="#5C4DE6" />
+              <Feather name="file-text" size={18} color="#5D4037" />
               <Text style={styles.cardTitle}>Notes</Text>
            </View>
            <Text style={styles.notesText}>{renderedNotes}</Text>
@@ -211,7 +211,7 @@ export default function SurveyPreviewScreen() {
       {/* Action Footer */}
       <View style={styles.actionFooter}>
         <Pressable style={styles.editBtn} onPress={handleEdit}>
-          <Feather name="edit-2" size={18} color="#5C4DE6" />
+          <Feather name="edit-2" size={18} color="#5D4037" />
           <Text style={styles.editBtnText}>Edit Fields</Text>
         </Pressable>
         <Pressable style={styles.submitBtn} onPress={handleSubmit}>
@@ -375,7 +375,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     borderWidth: 2,
     borderColor: '#FFF',
   },
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   toggleBtnActive: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     paddingVertical: 6,
     paddingHorizontal: 12,
     borderRadius: 20,
@@ -448,7 +448,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
   },
   editBtnText: {
-    color: '#5C4DE6',
+    color: '#5D4037',
     fontSize: 15,
     fontWeight: 'bold',
     marginLeft: 8,
@@ -461,7 +461,7 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
     borderRadius: 12,
     marginLeft: 8,
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
   },
   submitBtnText: {
     color: '#FFF',

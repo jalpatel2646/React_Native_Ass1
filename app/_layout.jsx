@@ -120,7 +120,7 @@ export default function Layout() {
     <SurveyProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <Drawer 
-          screenOptions={{ headerShown: true, drawerActiveBackgroundColor: '#5C4DE6', drawerActiveTintColor: '#FFF' }}
+          screenOptions={{ headerShown: true, drawerActiveBackgroundColor: '#5D4037', drawerActiveTintColor: '#FFF' }}
           drawerContent={(props) => <CustomDrawerContent {...props} />}
         >
           <Drawer.Screen
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   headerBackground: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     height: 130,
     width: '100%',
     position: 'absolute',
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 11,
     fontWeight: '700',
-    color: '#7A7A9D',
+    color: '#795548',
     letterSpacing: 1,
     marginTop: 10,
     marginBottom: 12,
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   activeItem: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
   },
   menuText: {
     fontSize: 15,

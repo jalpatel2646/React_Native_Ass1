@@ -115,7 +115,7 @@ export default function LocationScreen() {
                 {errorMsg ? (
                   <Text style={styles.errorText}>{errorMsg}</Text>
                 ) : (
-                  <ActivityIndicator size="large" color="#5C4DE6" />
+                  <ActivityIndicator size="large" color="#5D4037" />
                 )}
              </View>
           )}
@@ -140,8 +140,8 @@ export default function LocationScreen() {
         {/* Actions List */}
         <View style={styles.actionsContainer}>
           <Pressable style={styles.actionItem} onPress={fetchLocation}>
-             <View style={[styles.actionIconWrapper, { backgroundColor: '#F0EEFE' }]}>
-               <Feather name="rotate-cw" size={18} color="#5C4DE6" />
+             <View style={[styles.actionIconWrapper, { backgroundColor: '#EFEBE9' }]}>
+               <Feather name="rotate-cw" size={18} color="#5D4037" />
              </View>
              <Text style={styles.actionText}>Refresh Coordinates</Text>
              <Feather name="chevron-right" size={20} color="#CCC" />
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     borderWidth: 2,
     borderColor: '#FFF',
   },
@@ -324,7 +324,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   toggleBtnActive: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
   },
   toggleText: {
     fontSize: 12,

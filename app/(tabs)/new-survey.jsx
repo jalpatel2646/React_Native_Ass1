@@ -115,7 +115,7 @@ export default function NewSurvey() {
         {/* Inspection Date */}
         <Text style={styles.label}>INSPECTION DATE</Text>
         <View style={styles.inputContainer}>
-          <Feather name="calendar" size={20} color="#6C5CE7" style={styles.inputIcon} />
+          <Feather name="calendar" size={20} color="#4E342E" style={styles.inputIcon} />
           <Text style={styles.dateText}>Sun, 19 Jul, 2026</Text>
           <Feather name="chevron-down" size={20} color="#777" style={styles.chevronIcon} />
         </View>
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#F0EEFE',
+    backgroundColor: '#EFEBE9',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 14,
@@ -374,13 +374,13 @@ const styles = StyleSheet.create({
   },
   previewBtn: {
     flexDirection: 'row',
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     borderRadius: 14,
     paddingVertical: 16,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
-    shadowColor: '#5C4DE6',
+    shadowColor: '#5D4037',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

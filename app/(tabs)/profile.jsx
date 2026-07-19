@@ -55,12 +55,12 @@ export default function Profile() {
             <Text style={styles.statLabel}>COMPLETED</Text>
           </View>
           <View style={styles.statCard}>
-            <MaterialCommunityIcons name="file-document-outline" size={22} color="#7A7A9D" style={styles.statIcon} />
+            <MaterialCommunityIcons name="file-document-outline" size={22} color="#795548" style={styles.statIcon} />
             <Text style={styles.statNumber}>0</Text>
             <Text style={styles.statLabel}>NO DRAFT</Text>
           </View>
           <View style={styles.statCard}>
-            <MaterialCommunityIcons name="shield-check" size={22} color="#5C4DE6" style={styles.statIcon} />
+            <MaterialCommunityIcons name="shield-check" size={22} color="#5D4037" style={styles.statIcon} />
             <Text style={styles.statNumber}>T-2</Text>
             <Text style={styles.statLabel}>CLEARANCE</Text>
           </View>
@@ -71,7 +71,7 @@ export default function Profile() {
         <View style={styles.listCard}>
           <View style={styles.listRow}>
             <View style={styles.iconBox}>
-              <MaterialCommunityIcons name="card-account-details-outline" size={20} color="#5C4DE6" />
+              <MaterialCommunityIcons name="card-account-details-outline" size={20} color="#5D4037" />
             </View>
             <View style={styles.listContent}>
               <Text style={styles.listSubtitle}>ID NUMBER</Text>
@@ -83,7 +83,7 @@ export default function Profile() {
 
           <View style={styles.listRow}>
             <View style={styles.iconBox}>
-              <MaterialCommunityIcons name="school-outline" size={20} color="#5C4DE6" />
+              <MaterialCommunityIcons name="school-outline" size={20} color="#5D4037" />
             </View>
             <View style={styles.listContent}>
               <Text style={styles.listSubtitle}>COURSE NAME</Text>
@@ -95,7 +95,7 @@ export default function Profile() {
 
           <View style={styles.listRow}>
              <View style={styles.iconBox}>
-              <MaterialCommunityIcons name="medal-outline" size={20} color="#5C4DE6" />
+              <MaterialCommunityIcons name="medal-outline" size={20} color="#5D4037" />
             </View>
             <View style={styles.listContent}>
               <Text style={styles.listSubtitle}>BATCH YEAR</Text>
@@ -109,7 +109,7 @@ export default function Profile() {
         <View style={styles.listCard}>
           <View style={[styles.listRow, { borderBottomWidth: 0, paddingBottom: 0 }]}>
             <View style={styles.iconBox}>
-              <Feather name="cloud-drizzle" size={20} color="#5C4DE6" />
+              <Feather name="cloud-drizzle" size={20} color="#5D4037" />
             </View>
             <View style={styles.listContent}>
               <Text style={styles.listSubtitle}>STORAGE MODE</Text>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   heroBanner: {
     height: 140,
-    backgroundColor: '#6C5CE7',
+    backgroundColor: '#4E342E',
     position: 'relative',
     overflow: 'hidden',
     marginTop: -20, // Seamlessly pulls it up slightly

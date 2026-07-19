@@ -40,7 +40,7 @@ export default function CameraScreen() {
   };
 
   if (hasPermission === null) {
-    return <View style={styles.center}><ActivityIndicator size="large" color="#6200ee" /></View>;
+    return <View style={styles.center}><ActivityIndicator size="large" color="#5D4037" /></View>;
   }
   if (hasPermission === false) {
     return <View style={styles.center}><Text>No access to camera</Text></View>;
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#111',
   },
   btn: {
-    backgroundColor: '#6200ee',
+    backgroundColor: '#5D4037',
     padding: 15,
     borderRadius: 8,
     minWidth: 120,

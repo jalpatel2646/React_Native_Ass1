@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   btn: {
-    backgroundColor: '#6200ee',
+    backgroundColor: '#5D4037',
     padding: 15,
     borderRadius: 8,
     marginTop: 20,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#6200ee',
+    backgroundColor: '#5D4037',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,

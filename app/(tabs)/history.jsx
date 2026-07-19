@@ -39,7 +39,7 @@ export default function History() {
     <View style={styles.card}>
       <View style={styles.cardHeader}>
         <View style={styles.cardHeaderTextGroup}>
-           <Feather name="box" size={16} color="#5C4DE6" />
+           <Feather name="box" size={16} color="#5D4037" />
            <Text style={styles.siteText}>{item.siteName || 'Untitled Survey'}</Text>
         </View>
         <View style={[styles.priorityPill, { backgroundColor: getPillColor(item.priority) }]}>
@@ -63,7 +63,7 @@ export default function History() {
       <View style={styles.actionRow}>
         <Pressable style={styles.viewBtn}>
           <Text style={styles.viewText}>View Report</Text>
-          <Feather name="arrow-right" size={14} color="#5C4DE6" />
+          <Feather name="arrow-right" size={14} color="#5D4037" />
         </Pressable>
         <Pressable style={styles.deleteBtn} onPress={() => handleDelete(item.id)}>
           <Feather name="trash-2" size={16} color="#E53935" />
@@ -196,8 +196,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   filterBtnActive: {
-    backgroundColor: '#5C4DE6',
-    borderColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
+    borderColor: '#5D4037',
   },
   filterText: {
     color: '#777',
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   viewText: {
-    color: '#5C4DE6',
+    color: '#5D4037',
     fontSize: 14,
     fontWeight: '700',
     marginRight: 4,

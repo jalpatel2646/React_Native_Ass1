@@ -21,7 +21,7 @@ export default function SurveyHubScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#fff' },
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 30, textAlign: 'center' },
-  btn: { backgroundColor: '#6200ee', padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 15 },
+  btn: { backgroundColor: '#5D4037', padding: 15, borderRadius: 8, alignItems: 'center', marginBottom: 15 },
   btnSecondary: { backgroundColor: '#03dac6' },
   btnText: { color: '#fff', fontSize: 16, fontWeight: 'bold' }
 });

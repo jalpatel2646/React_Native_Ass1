@@ -58,11 +58,11 @@ function CustomTabBar({ state, descriptors, navigation }) {
               <Feather 
                 name={iconName} 
                 size={22} 
-                color={isFocused ? '#5C4DE6' : '#A0A0A0'} 
+                color={isFocused ? '#5D4037' : '#A0A0A0'} 
               />
               <Text style={[
                 styles.tabLabel, 
-                { color: isFocused ? '#5C4DE6' : '#A0A0A0', fontWeight: isFocused ? '600' : '500' }
+                { color: isFocused ? '#5D4037' : '#A0A0A0', fontWeight: isFocused ? '600' : '500' }
               ]}>
                 {label}
               </Text>
@@ -162,13 +162,13 @@ const styles = StyleSheet.create({
     marginTop: -30, // Lift it up
   },
   floatingButton: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     width: 60,
     height: 60,
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    shadowColor: '#5C4DE6',
+    shadowColor: '#5D4037',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 8,

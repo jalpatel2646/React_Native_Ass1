@@ -30,7 +30,7 @@ export default function Dashboard() {
           <View style={styles.bannerBgCircle1} />
           <View style={styles.bannerBgCircle2} />
           <View style={styles.bannerHeader}>
-             <Feather name="cloud-drizzle" size={16} color="#E0DDF7" />
+             <Feather name="cloud-drizzle" size={16} color="#D7CCC8" />
              <Text style={styles.goodAfternoonText}>GOOD AFTERNOON</Text>
           </View>
           <Text style={styles.bannerTitle}>Smart Field Inspector</Text>
@@ -66,8 +66,8 @@ export default function Dashboard() {
         {/* Stats Row */}
         <View style={styles.statsRow}>
           <View style={styles.statCard}>
-            <View style={[styles.iconWrapper, { backgroundColor: '#F0EEFE' }]}>
-              <Feather name="calendar" size={20} color="#5C4DE6" />
+            <View style={[styles.iconWrapper, { backgroundColor: '#EFEBE9' }]}>
+              <Feather name="calendar" size={20} color="#5D4037" />
             </View>
             <Text style={styles.statNumber}>3</Text>
             <Text style={styles.statSubtitle}>Today's Surveys</Text>
@@ -87,8 +87,8 @@ export default function Dashboard() {
         {/* Quick Inspection Tools */}
         <View style={styles.toolsRow}>
           <Pressable style={styles.toolCard} onPress={() => router.push('/new-survey')}>
-            <View style={[styles.iconWrapper, { backgroundColor: '#F0EEFE', marginBottom: 12 }]}>
-              <Feather name="edit" size={20} color="#5C4DE6" />
+            <View style={[styles.iconWrapper, { backgroundColor: '#EFEBE9', marginBottom: 12 }]}>
+              <Feather name="edit" size={20} color="#5D4037" />
             </View>
             <Text style={styles.toolTitle}>New Survey</Text>
             <Text style={styles.toolSubtitle}>Start survey draft</Text>
@@ -133,7 +133,7 @@ export default function Dashboard() {
           recentSurveys.map((survey, index) => (
             <View key={index} style={styles.recentCard}>
               <View style={styles.recentIconBox}>
-                <Feather name="file-text" size={18} color="#5C4DE6" />
+                <Feather name="file-text" size={18} color="#5D4037" />
               </View>
               <View style={styles.recentContent}>
                 <Text style={styles.recentSite}>{survey.siteName || 'Untitled Survey'}</Text>
@@ -190,7 +190,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   bannerContainer: {
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
     borderRadius: 16,
     padding: 24,
     marginBottom: 20,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   goodAfternoonText: {
-    color: '#E0DDF7',
+    color: '#D7CCC8',
     fontSize: 12,
     fontWeight: '700',
     letterSpacing: 1,
@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   bannerSubtitle: {
-    color: '#E0DDF7',
+    color: '#D7CCC8',
     fontSize: 13,
     lineHeight: 18,
   },
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     width: 4,
-    backgroundColor: '#5C4DE6',
+    backgroundColor: '#5D4037',
   },
   profileHeaderRow: {
     flexDirection: 'row',
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
   fieldRepText: {
     fontSize: 11,
     fontWeight: '700',
-    color: '#7A7A9D',
+    color: '#795548',
     letterSpacing: 0.5,
   },
   activeBadge: {
@@ -405,7 +405,7 @@ const styles = StyleSheet.create({
   },
   viewAllText: {
     fontSize: 14,
-    color: '#5C4DE6',
+    color: '#5D4037',
     fontWeight: '700',
   },
   recentCard: {
@@ -427,7 +427,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 12,
-    backgroundColor: '#F0EEFE',
+    backgroundColor: '#EFEBE9',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 14,
