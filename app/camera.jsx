@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Pressable, Alert, Image, ActivityIndicator } from 'react-native';
 import { Camera, CameraView } from 'expo-camera';
+import { useSurvey } from '../context/SurveyContext';
 
 export default function CameraScreen() {
   const [hasPermission, setHasPermission] = useState(null);
-  const [photo, setPhoto] = useState(null);
-  const [captureTime, setCaptureTime] = useState(null);
+  const { surveyData, setSurveyData } = useSurvey();
+  const [photo, setPhoto] = useState(surveyData?.photoUri || null);
+  const [captureTime, setCaptureTime] = useState(surveyData?.photoTime || null);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const cameraRef = useRef(null);
 
@@ -19,15 +21,21 @@ export default function CameraScreen() {
   const takePicture = async () => {
     if (cameraRef.current) {
       const data = await cameraRef.current.takePictureAsync();
+      const time = new Date().toLocaleString();
       setPhoto(data.uri);
-      setCaptureTime(new Date().toLocaleString());
+      setCaptureTime(time);
+      setSurveyData(prev => ({ ...prev, photoUri: data.uri, photoTime: time }));
     }
   };
 
   const deletePhoto = () => {
     Alert.alert('Delete Photo', 'Are you sure you want to delete this photo?', [
       { text: 'Cancel', style: 'cancel' },
-      { text: 'Delete', style: 'destructive', onPress: () => { setPhoto(null); setCaptureTime(null); } }
+      { text: 'Delete', style: 'destructive', onPress: () => { 
+        setPhoto(null); 
+        setCaptureTime(null);
+        setSurveyData(prev => ({ ...prev, photoUri: null, photoTime: null }));
+      } }
     ]);
   };
 

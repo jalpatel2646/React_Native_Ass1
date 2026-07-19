@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Pressable, TextInput, Alert, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Pressable, TextInput, Alert, ScrollView, SafeAreaView, Platform } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
+import { Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 export default function ClipboardScreen() {
-  const [pastedText, setPastedText] = useState('');
+  const router = useRouter();
   const [notes, setNotes] = useState('');
 
   const copyToClipboard = async (text, label) => {
+    if (!text) {
+        Alert.alert('Empty', `No ${label} data to copy.`);
+        return;
+    }
     await Clipboard.setStringAsync(text);
     Alert.alert('Copied', `${label} copied to clipboard!`);
   };
@@ -15,124 +21,252 @@ export default function ClipboardScreen() {
     const hasString = await Clipboard.hasStringAsync();
     if (hasString) {
       const text = await Clipboard.getStringAsync();
-      setPastedText(text);
-      setNotes(text);
-      Alert.alert('Pasted', 'Content pasted from clipboard');
+      setNotes(prev => prev ? `${prev}\n${text}` : text);
     } else {
       Alert.alert('Empty', 'No text found in clipboard');
     }
   };
 
-  const clearClipboard = async () => {
-    await Clipboard.setStringAsync('');
-    Alert.alert('Cleared', 'Clipboard data cleared');
-  };
-
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.sectionTitle}>Copy Actions</Text>
-      <View style={styles.actionBlock}>
-        <Pressable style={styles.btn} onPress={() => copyToClipboard('SRV-10293', 'Survey ID')}>
-          <Text style={styles.btnText}>Copy Survey ID (SRV-10293)</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.headerContainer}>
+        <Pressable style={styles.backButton} onPress={() => router.back()}>
+          <Feather name="chevron-left" size={24} color="#000" />
         </Pressable>
-        <Pressable style={styles.btn} onPress={() => copyToClipboard('+1 234 567 8900', 'Contact Number')}>
-          <Text style={styles.btnText}>Copy Contact Number</Text>
-        </Pressable>
-        <Pressable style={styles.btn} onPress={() => copyToClipboard('Lat: 40.7128, Lon: -74.0060', 'Location')}>
-          <Text style={styles.btnText}>Copy Current Location</Text>
-        </Pressable>
+        <Text style={styles.headerTitleText}>Clipboard</Text>
+        <View style={{ width: 40 }} />
       </View>
 
-      <Text style={styles.sectionTitle}>Paste Actions</Text>
-      <View style={styles.actionBlock}>
-        <Pressable style={[styles.btn, styles.btnSecondary]} onPress={pasteFromClipboard}>
-          <Text style={styles.btnText}>Paste Notes</Text>
-        </Pressable>
-        {pastedText ? (
-          <View style={styles.pastedContainer}>
-            <Text style={styles.pastedLabel}>Pasted Content:</Text>
-            <Text style={styles.pastedText}>{pastedText}</Text>
+      <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        <Text style={styles.pageTitle}>Clipboard Utilities</Text>
+        <Text style={styles.pageSubtitle}>Copy and paste survey data quickly</Text>
+
+        <Text style={styles.sectionLabel}>SURVEY DATA</Text>
+        <Pressable 
+          style={styles.copyCard} 
+          onPress={() => copyToClipboard('SURV-1784450742369', 'Survey ID')}
+        >
+          <View style={[styles.iconBox, { backgroundColor: '#F0EEFE' }]}>
+            <Feather name="file-text" size={20} color="#5C4DE6" />
           </View>
-        ) : null}
-      </View>
+          <View style={styles.cardTextContainer}>
+             <Text style={styles.cardTitle}>Copy Latest Survey ID</Text>
+             <Text style={styles.cardSub}>SURV-1784450742369</Text>
+          </View>
+          <Feather name="copy" size={20} color="#888" style={styles.copyIcon} />
+        </Pressable>
 
-      <Text style={styles.sectionTitle}>Notepad</Text>
-      <TextInput
-        style={styles.textArea}
-        value={notes}
-        onChangeText={setNotes}
-        placeholder="Edit pasted notes here..."
-        multiline
-      />
+        <Text style={styles.sectionLabel}>CONTACT INFO</Text>
+        <Pressable 
+          style={[styles.copyCard, styles.cardFaded]} 
+          onPress={() => copyToClipboard(null, 'Contact Number')}
+        >
+          <View style={[styles.iconBox, { backgroundColor: '#EAF6F8' }]}>
+            <Feather name="phone" size={20} color="#45AFC5" />
+          </View>
+          <View style={styles.cardTextContainer}>
+             <Text style={[styles.cardTitle, { color: '#888' }]}>Copy Attached Contact Number</Text>
+             <Text style={[styles.cardSub, { color: '#B0B0B0' }]}>No contact attached to draft</Text>
+          </View>
+          <Feather name="copy" size={20} color="#C4C4C4" style={styles.copyIcon} />
+        </Pressable>
 
-      <Pressable style={[styles.btn, styles.btnDanger]} onPress={clearClipboard}>
-        <Text style={styles.btnText}>Clear Clipboard Data</Text>
-      </Pressable>
-    </ScrollView>
+        <Text style={styles.sectionLabel}>LOCATION DATA</Text>
+        <Pressable 
+          style={[styles.copyCard, styles.cardFaded]} 
+          onPress={() => copyToClipboard(null, 'Location')}
+        >
+          <View style={[styles.iconBox, { backgroundColor: '#E6F8EF' }]}>
+            <Feather name="map-pin" size={20} color="#20B268" />
+          </View>
+          <View style={styles.cardTextContainer}>
+             <Text style={[styles.cardTitle, { color: '#888' }]}>Copy Attached Location</Text>
+             <Text style={[styles.cardSub, { color: '#B0B0B0' }]}>No location attached to draft</Text>
+          </View>
+          <Feather name="copy" size={20} color="#C4C4C4" style={styles.copyIcon} />
+        </Pressable>
+
+        <Text style={styles.sectionLabel}>NOTES</Text>
+        <View style={styles.notesCard}>
+          <TextInput
+            style={styles.textArea}
+            value={notes}
+            onChangeText={setNotes}
+            placeholder="Paste or type notes here..."
+            placeholderTextColor="#A0A0A0"
+            multiline
+          />
+          <View style={styles.notesActionRow}>
+             <Pressable style={styles.pasteBtn} onPress={pasteFromClipboard}>
+               <Feather name="clipboard" size={16} color="#45AFC5" />
+               <Text style={styles.pasteBtnText}>Paste</Text>
+             </Pressable>
+             <Pressable style={styles.saveBtn} onPress={() => { Alert.alert('Saved', 'Draft temporarily saved'); }}>
+               <Feather name="save" size={16} color="#5C4DE6" />
+               <Text style={styles.saveBtnText}>Save to Draft</Text>
+             </Pressable>
+          </View>
+        </View>
+        
+        <View style={{ height: 60 }} />
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#FAFAFA',
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: '#FAFAFA',
+    paddingTop: Platform.OS === 'android' ? 30 : 12,
+  },
+  backButton: {
+    padding: 8,
+    backgroundColor: '#F3F4F6',
+    borderRadius: 8,
+  },
+  headerTitleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#1A1A1A',
+  },
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor: '#fff',
   },
-  sectionTitle: {
-    fontSize: 18,
+  scrollContent: {
+    paddingHorizontal: 16,
+    paddingTop: 10,
+  },
+  pageTitle: {
+    fontSize: 22,
     fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 12,
-    marginTop: 20,
-  },
-  actionBlock: {
-    backgroundColor: '#f9f9f9',
-    padding: 16,
-    borderRadius: 8,
-  },
-  btn: {
-    backgroundColor: '#6200ee',
-    padding: 15,
-    borderRadius: 8,
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  btnSecondary: {
-    backgroundColor: '#03dac6',
-  },
-  btnDanger: {
-    backgroundColor: '#ff5252',
-    marginTop: 20,
-    marginBottom: 40,
-  },
-  btnText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  pastedContainer: {
-    marginTop: 10,
-    padding: 10,
-    backgroundColor: '#e6e6e6',
-    borderRadius: 8,
-  },
-  pastedLabel: {
-    fontSize: 12,
-    color: '#555',
+    color: '#1A1A1A',
     marginBottom: 4,
   },
-  pastedText: {
-    fontSize: 16,
-    color: '#000',
+  pageSubtitle: {
+    fontSize: 14,
+    color: '#888',
+    marginBottom: 24,
+  },
+  sectionLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: '#888',
+    letterSpacing: 0.5,
+    marginBottom: 8,
+    marginTop: 8,
+  },
+  copyCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#ECECEC',
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.03,
+    shadowRadius: 6,
+    elevation: 2,
+  },
+  cardFaded: {
+    backgroundColor: '#F7F7F7',
+    shadowOpacity: 0,
+    elevation: 0,
+    borderColor: '#F0F0F0',
+  },
+  iconBox: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 14,
+  },
+  cardTextContainer: {
+    flex: 1,
+  },
+  cardTitle: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#1A1A1A',
+    marginBottom: 2,
+  },
+  cardSub: {
+    fontSize: 12,
+    color: '#777',
+  },
+  copyIcon: {
+    marginLeft: 10,
+  },
+  notesCard: {
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#ECECEC',
+    borderRadius: 16,
+    padding: 16,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.03,
+    shadowRadius: 6,
+    elevation: 2,
   },
   textArea: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
     height: 120,
     textAlignVertical: 'top',
-    backgroundColor: '#f9f9f9',
+    fontSize: 15,
+    color: '#333',
+    fontWeight: '500',
+    marginBottom: 16,
+  },
+  notesActionRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  pasteBtn: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#45AFC5',
+    paddingVertical: 12,
+    marginRight: 8,
+    backgroundColor: '#EAF6F8',
+  },
+  pasteBtnText: {
+    color: '#45AFC5',
+    fontWeight: '700',
+    fontSize: 14,
+    marginLeft: 6,
+  },
+  saveBtn: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#5C4DE6',
+    paddingVertical: 12,
+    marginLeft: 8,
+  },
+  saveBtnText: {
+    color: '#5C4DE6',
+    fontWeight: '700',
+    fontSize: 14,
+    marginLeft: 6,
   }
 });
